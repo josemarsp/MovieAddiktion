@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".views.fragments.PerfilInternoFragment"
+        android:background="#000">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/item_foto_profile_id"
+            android:layout_width="171dp"
+            android:layout_height="174dp"
+            android:layout_marginTop="36dp"
+            android:background="@color/background_black"
+            android:scaleType="centerCrop"
+            android:src="@drawable/dre"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+        <TextView
+            android:id="@+id/tv_fragment_perfil_nome_usuario_id"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="72dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="Olá, Movie Addicted!"
+            android:padding="10dp"
+            android:textSize="16dp"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:background="@drawable/background_card"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/item_foto_profile_id" />
+
+        <TextView
+            android:id="@+id/tv_fragment_perfil_email_usuario_id"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="Você já assistiu algum filme hoje?"
+            android:textSize="16dp"
+            android:padding="10dp"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:background="@drawable/background_card"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.709"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_fragment_perfil_nome_usuario_id" />
+
+        <TextView
+            android:id="@+id/tv_fragment_perfil_qtd_filmes_favoritados_id"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:textAlignment="center"
+            android:padding="10dp"
+            android:textColor="#fff"
+            android:textSize="16dp"
+            android:text="Você ainda não favoritou nenhum filme!"
+            android:background="@drawable/background_card"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_fragment_perfil_email_usuario_id" />
+
+        <!--    <TextView-->
+        <!--        android:id="@+id/tv_fragment_perfil_frase_aleatoria_filme_id"-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:layout_marginStart="32dp"-->
+        <!--        android:layout_marginLeft="32dp"-->
+        <!--        android:layout_marginTop="32dp"-->
+        <!--        android:layout_marginEnd="32dp"-->
+        <!--        android:layout_marginRight="32dp"-->
+        <!--        android:text="Qual a frase de um filme que mais te marcou?"-->
+        <!--        android:textSize="18dp"-->
+        <!--        android:inputType="textMultiLine"-->
+        <!--        android:textAlignment="center"-->
+        <!--        android:textColor="@color/purple"-->
+        <!--        app:layout_constraintEnd_toEndOf="parent"-->
+        <!--        app:layout_constraintStart_toStartOf="parent"-->
+        <!--        app:layout_constraintTop_toBottomOf="@+id/tv_fragment_perfil_qtd_filmes_favoritados_id" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
