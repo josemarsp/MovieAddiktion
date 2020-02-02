@@ -14,7 +14,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import br.com.josef.movieaddiktion.R;
 import br.com.josef.movieaddiktion.view.fragment.HomeFragment;
 import br.com.josef.movieaddiktion.view.fragment.ListaDeFavoritosFragment;
-import br.com.josef.movieaddiktion.view.fragment.PerfilInternoFragment;
+import br.com.josef.movieaddiktion.view.fragment.ContagemFragment;
 import br.com.josef.movieaddiktion.view.fragment.SearchFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 replaceFragment(new SearchFragment());
 
             } else if (id == R.id.navigation_perfil) {
-                replaceFragment(new PerfilInternoFragment());
+                replaceFragment(new ContagemFragment());
             }
             return true;
 

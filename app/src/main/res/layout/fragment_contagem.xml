@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -19,12 +17,12 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/item_foto_profile_id"
-            android:layout_width="171dp"
-            android:layout_height="174dp"
-            android:layout_marginTop="36dp"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="16dp"
             android:background="@color/background_black"
             android:scaleType="centerCrop"
-            android:src="@drawable/dre"
+            android:src="@drawable/delorean"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -32,62 +30,54 @@
             />
 
         <TextView
-            android:id="@+id/tv_fragment_perfil_nome_usuario_id"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="72dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:text="Olá, Movie Addicted!"
-            android:padding="10dp"
-            android:textSize="16dp"
-            android:textAlignment="center"
-            android:textColor="#fff"
-            android:background="@drawable/background_card"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/item_foto_profile_id" />
-
-        <TextView
             android:id="@+id/tv_fragment_perfil_email_usuario_id"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:text="Você já assistiu algum filme hoje?"
-            android:textSize="16dp"
-            android:padding="10dp"
-            android:textColor="#fff"
-            android:textAlignment="center"
             android:background="@drawable/background_card"
+            android:padding="10dp"
+            android:text="Quantidade de filmes assistidos"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textSize="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.709"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_fragment_perfil_nome_usuario_id" />
+            app:layout_constraintTop_toBottomOf="@+id/item_foto_profile_id" />
 
         <TextView
             android:id="@+id/tv_fragment_perfil_qtd_filmes_favoritados_id"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:textAlignment="center"
+            android:background="@drawable/background_card"
             android:padding="10dp"
+            android:text="Registre todos os seus filmes favoritos !"
+            android:textAlignment="center"
             android:textColor="#fff"
             android:textSize="16dp"
-            android:text="Você ainda não favoritou nenhum filme!"
-            android:background="@drawable/background_card"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/deloreanText" />
+
+        <TextView
+            android:id="@+id/deloreanText"
+            android:layout_width="wrap_content"
+            android:layout_height="60sp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/digitalitalic"
+            android:textAlignment="center"
+            android:textColor="@color/red"
+            android:textSize="60sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_fragment_perfil_email_usuario_id" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_fragment_perfil_email_usuario_id"
+            tools:text="TextView" />
 
         <!--    <TextView-->
         <!--        android:id="@+id/tv_fragment_perfil_frase_aleatoria_filme_id"-->

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/background_black"
-    tools:context=".views.fragments.ResultadoFilmeFragment">
+    tools:context=".view.fragment.ResultadoFilmeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -15,7 +15,6 @@
             android:id="@+id/imagemFilmeDetalhe"
             android:layout_width="match_parent"
             android:layout_height="230dp"
-            android:layout_marginBottom="1000dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -61,7 +60,7 @@
             android:layout_marginBottom="8dp"
             tools:text="7.1"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            android:textColor="@color/purple"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/imagemFilmeDetalhe"
@@ -103,8 +102,11 @@
             android:layout_marginTop="4dp"
             android:layout_marginEnd="8dp"
             android:justificationMode="inter_word"
+            android:layout_marginBottom="500dp"
+
             android:textColor="@color/gray"
             android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"

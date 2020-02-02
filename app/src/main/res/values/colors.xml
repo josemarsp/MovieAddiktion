@@ -7,7 +7,8 @@
     <color name="colortextos">#B2B4B6</color>
     <color name="colorNoSelection">#3E2A55</color>
     <color name="purple">#bb87fc</color>
+    <color name="red">#E00707</color>
     <color name="background_black">#101216</color>
     <color name="gray">#8492A6</color>
-    <color name="white">#ffff</color>
+    <color name="white">#050505</color>
 </resources>

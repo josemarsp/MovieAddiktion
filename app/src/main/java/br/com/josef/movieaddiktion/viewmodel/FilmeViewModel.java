@@ -22,6 +22,8 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
 
+import static br.com.josef.movieaddiktion.util.Utils.isNetworkConnected;
+
 
 public class FilmeViewModel extends AndroidViewModel {
     private MutableLiveData<List<FilmeNowPlaying>> listaFilme = new MutableLiveData<>();
@@ -48,15 +50,13 @@ public class FilmeViewModel extends AndroidViewModel {
     }
 
     public void getFilmesEmCartaz(String apiKey, String linguaPais, int pagina) {
-
-        getAllFilmesNowPlaying(apiKey, linguaPais, pagina);
-
-//        if (checkNetworkState(getApplication())) {
-//            getAllFilmesNowPlaying(apiKey, linguaPais, pagina);
-//        } else {
-//            getFromLocal();
-//        }
-
+      // getAllFilmesNowPlaying(apiKey, linguaPais, pagina);
+        if (isNetworkConnected(getApplication())) {
+            getAllFilmesNowPlaying(apiKey, linguaPais, pagina);
+        } else {
+            getFromLocal();
+            Log.i("LOG", "DESCONECTADO!");
+        }
     }
 
 

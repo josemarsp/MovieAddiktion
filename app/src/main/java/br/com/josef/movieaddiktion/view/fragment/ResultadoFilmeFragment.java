@@ -32,7 +32,7 @@ import static br.com.josef.movieaddiktion.view.fragment.HomeFragment.MOVIE_ID_KE
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ResultadoFilmeFragment extends Fragment implements OnClickFavoritos {
+public class ResultadoFilmeFragment extends Fragment  {
     private Filme filme;
     private ImageView imagemFilme;
     private TextView nomeFilme;
@@ -130,7 +130,7 @@ public class ResultadoFilmeFragment extends Fragment implements OnClickFavoritos
                     bigDecimal = bigDecimal.divide(porMil, BigDecimal.ROUND_UP);
                     bilheteria.setText(bigDecimal.toString() + "k");
 
-                } else if (filme.getBudget() < 999999999) {
+                } else if (filme.getRevenue() < 999999999) {
                     BigDecimal bigDecimal = new BigDecimal(filme.getRevenue());
                     BigDecimal porMilao = new BigDecimal(1000000);
                     bigDecimal = bigDecimal.divide(porMilao, BigDecimal.ROUND_UP);
@@ -166,7 +166,6 @@ public class ResultadoFilmeFragment extends Fragment implements OnClickFavoritos
                 }
 
 
-                //Long xpto = filme.getId();
                 favoritoViewModel.checaFilme(filme.getId());
                 favoritoViewModel.getFilmeBoolean().observe(this, aBoolean -> {
                     Boolean bool = aBoolean;
@@ -175,21 +174,18 @@ public class ResultadoFilmeFragment extends Fragment implements OnClickFavoritos
                     }
 
                 });
-                //:TODO Se o filme está nos Favoritos, não deixar repetir e clicar
-                //:TODO Melhorar o código
-                //:TODO colocar coração na busca
+
 
                 iconeFavorito.setOnClickListener(v -> {
-                    favoritoViewModel.insereFilme(filme);
 
                     favoritoViewModel.getFilmeBoolean().observe(this, aBoolean -> {
                         Boolean bool = aBoolean;
-                        if (bool) {
-                            mudarIconeCoracaoParaCheio();
-                        }
+                        if (bool == false) {
+                            favoritoViewModel.insereFilme(filme);
+                            Toast.makeText(getContext(), "Filme salvo nos favoritos", Toast.LENGTH_SHORT).show();
 
+                        }
                     });
-                    Toast.makeText(getContext(), "Filme salvo nos favoritos", Toast.LENGTH_SHORT).show();
                 });
 
             });
@@ -199,14 +195,10 @@ public class ResultadoFilmeFragment extends Fragment implements OnClickFavoritos
 
         }
 
-        //  Verifica se o Filme já é favorito
-
-
-
         iconeCompartilhar.setOnClickListener(view1 -> {
             Intent sharingIntent = new Intent(Intent.ACTION_SEND);
             sharingIntent.setType("text/plain");
-            String shareBody = "Acredito que você se interessaria pelo filme: " + nomeFilme.getText().toString() + "." + " Sinopse: " + sinopseDoFilme.getText().toString();
+            String shareBody = "Bora assistir: " + nomeFilme.getText().toString() + " -> Sinopse: " + sinopseDoFilme.getText().toString();
             sharingIntent.putExtra(Intent.EXTRA_TEXT, shareBody);
             startActivity(Intent.createChooser(sharingIntent, "Share via"));
         });
@@ -234,7 +226,6 @@ public class ResultadoFilmeFragment extends Fragment implements OnClickFavoritos
         orcamento = view.findViewById(R.id.textBudget);
         iconeTrailler = view.findViewById(R.id.icon_trailer_id);
         iconeFavorito = view.findViewById(R.id.icon_favorito_id);
-        //iconeCompartilhar = view.findViewById(R.id.icon_favorito_id);
         viewModel = ViewModelProviders.of(this).get(FilmeViewModel.class);
         favoritoViewModel = ViewModelProviders.of(this).get(FavoritoViewModel.class);
         coracaoVazio = view.findViewById(R.drawable.favoritos_nao_selecionado);
@@ -243,15 +234,9 @@ public class ResultadoFilmeFragment extends Fragment implements OnClickFavoritos
 
     }
 
-    @Override
-    public void onClickFavoritos(Filme filme) {
+
+
+ 
 
     }
 
-    @Override
-    public void removeClickFavoritos(Filme filme) {
-
-    }
-
-
-}

@@ -18,7 +18,7 @@
 
     <item
         android:id="@+id/navigation_perfil"
-        android:icon="@drawable/ic_paparazzi_24dp"
+        android:icon="@drawable/ic_movie_filter_24dp"
         android:title="Perfil" />
 
 </menu>
