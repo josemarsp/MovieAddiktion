@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -69,6 +70,20 @@ public class HomeFragment extends Fragment implements OnClickFilmePlayingNow {
                 progressBar.setVisibility(View.GONE);
             }
         });
+
+        OnBackPressedCallback callback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                FragmentTransaction tr = getFragmentManager().beginTransaction();
+                HomeFragment frag = new HomeFragment();
+
+                tr.replace(R.id.containerPrincipal, frag);
+                tr.commit();
+
+            }
+        };
+        requireActivity().getOnBackPressedDispatcher().addCallback(this, callback);
+
 
         return view;
 

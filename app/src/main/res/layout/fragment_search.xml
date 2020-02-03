@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".views.fragments.SearchFragment">
+    tools:context=".view.fragment.SearchFragment">
 
 
     <SearchView
@@ -14,6 +14,9 @@
         android:layout_height="60dp"
         android:background="#8A8888"
         android:backgroundTint="#423D3D"
+        android:outlineAmbientShadowColor="@color/purple"
+        android:focusableInTouchMode="false"
+        android:outlineSpotShadowColor="@color/purple"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

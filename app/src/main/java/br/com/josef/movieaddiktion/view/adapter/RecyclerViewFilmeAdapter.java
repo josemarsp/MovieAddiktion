@@ -32,7 +32,7 @@ public class RecyclerViewFilmeAdapter extends RecyclerView.Adapter<RecyclerViewF
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_view_lista_um, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_view_home, parent, false);
         return new ViewHolder(view);
     }
 
@@ -54,6 +54,7 @@ public class RecyclerViewFilmeAdapter extends RecyclerView.Adapter<RecyclerViewF
     public void atualizaLista(List<FilmeNowPlaying> novaLista) {
         if (this.filmeNowPlayingList.isEmpty()) {
             this.filmeNowPlayingList = novaLista;
+
         } else {
             this.filmeNowPlayingList.addAll(novaLista);
         }

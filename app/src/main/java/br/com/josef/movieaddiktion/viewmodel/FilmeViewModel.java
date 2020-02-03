@@ -50,7 +50,6 @@ public class FilmeViewModel extends AndroidViewModel {
     }
 
     public void getFilmesEmCartaz(String apiKey, String linguaPais, int pagina) {
-      // getAllFilmesNowPlaying(apiKey, linguaPais, pagina);
         if (isNetworkConnected(getApplication())) {
             getAllFilmesNowPlaying(apiKey, linguaPais, pagina);
         } else {

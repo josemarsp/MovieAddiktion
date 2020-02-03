@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.SearchView;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -65,6 +66,8 @@ public class SearchFragment extends Fragment implements OnClickSearch {
                 progressBar.setVisibility(View.GONE);
             }
         });
+        searchView.setOnClickListener(v -> searchView.setIconified(false));
+
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -77,7 +80,7 @@ public class SearchFragment extends Fragment implements OnClickSearch {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                if (newText.length() > 10) {
+                if (newText.length() > 15) {
                     nomeFilme = newText;
                     adapter.clear();
                     viewModel.getAllSerchResult(nomeFilme);
@@ -85,6 +88,19 @@ public class SearchFragment extends Fragment implements OnClickSearch {
                 return false;
             }
         });
+
+
+        OnBackPressedCallback callback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                FragmentTransaction tr = getFragmentManager().beginTransaction();
+                HomeFragment frag = new HomeFragment();
+                tr.replace(R.id.containerPrincipal, frag);
+                tr.commit();
+
+            }
+        };
+        requireActivity().getOnBackPressedDispatcher().addCallback(this, callback);
 
         return view;
     }
@@ -115,4 +131,6 @@ public class SearchFragment extends Fragment implements OnClickSearch {
         transaction.replace(R.id.containerPrincipal, fragment);
         transaction.commit();
     }
+
+
 }

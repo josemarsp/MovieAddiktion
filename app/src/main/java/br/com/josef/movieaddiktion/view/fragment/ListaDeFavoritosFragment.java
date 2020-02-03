@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -54,6 +55,19 @@ public class ListaDeFavoritosFragment extends Fragment implements OnClickFavorit
             adapter.atualizaLista(filmes);
 
         });
+        OnBackPressedCallback callback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                FragmentTransaction tr = getFragmentManager().beginTransaction();
+                HomeFragment frag = new HomeFragment();
+
+                tr.replace(R.id.containerPrincipal, frag);
+                tr.commit();
+
+            }
+        };
+        requireActivity().getOnBackPressedDispatcher().addCallback(this, callback);
+
 
         return view;
     }
@@ -88,7 +102,6 @@ public class ListaDeFavoritosFragment extends Fragment implements OnClickFavorit
     public void removeClickFavoritos(Filme filme) {
         viewModel.deletaFilme(filme);
         Toast.makeText(getContext(), "Filme excluído", Toast.LENGTH_SHORT).show();
-
 
         FragmentTransaction tr = getFragmentManager().beginTransaction();
         ListaDeFavoritosFragment frag = new ListaDeFavoritosFragment();

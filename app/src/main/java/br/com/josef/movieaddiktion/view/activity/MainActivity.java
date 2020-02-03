@@ -3,8 +3,10 @@ package br.com.josef.movieaddiktion.view.activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -20,10 +22,6 @@ import br.com.josef.movieaddiktion.view.fragment.SearchFragment;
 public class MainActivity extends AppCompatActivity {
 
 
-    // private BottomNavigationView bottomNavigationView;
-    //FragmentManager fragmentManager;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,10 +31,6 @@ public class MainActivity extends AppCompatActivity {
 
         replaceFragment(new HomeFragment());
 
-
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_search, R.id.navigation_minha_lista, R.id.navigation_perfil)
-                .build();
 
         navView.setOnNavigationItemSelectedListener(menuItem -> {
             int id = menuItem.getItemId();
@@ -61,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
@@ -73,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
 
         if (id == R.id.sair) {
 
-            //deslogar();
-
+            Toast.makeText(getApplicationContext(), "App Encerrado! Até a próxima!!!", Toast.LENGTH_LONG).show();
+            finish();
             return true;
         }
 
@@ -90,13 +83,5 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
     }
 
-//    public void deslogar() {
-//        FirebaseAuth.getInstance().signOut();
-//        LoginManager.getInstance().logOut();
-//        Intent intent = new Intent(PrincipalActivity.this, MainActivity.class);
-//        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//        startActivity(intent);
-//        finish();
-//    }
 
 }
