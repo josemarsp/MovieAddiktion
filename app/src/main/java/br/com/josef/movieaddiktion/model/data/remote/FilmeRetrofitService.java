@@ -11,8 +11,7 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class SearchRetrofitService {
-
+public class FilmeRetrofitService {
 
     private static final String BASE_URL = "https://api.themoviedb.org/3/";
 
@@ -51,7 +50,8 @@ public class SearchRetrofitService {
     }
 
     // Retornamos a api criada com o retrofit
-    public static SearchAPI getSearch() {
-        return getRetrofit().create(SearchAPI.class);
+    public static FilmeAPI getApiService() {
+        return getRetrofit().create(FilmeAPI.class);
     }
+
 }

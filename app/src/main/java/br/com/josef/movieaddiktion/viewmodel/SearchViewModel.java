@@ -11,7 +11,7 @@ import androidx.lifecycle.MutableLiveData;
 import java.util.List;
 
 import br.com.josef.movieaddiktion.model.pojos.searchmovies.Search;
-import br.com.josef.movieaddiktion.repository.SearchRepository;
+import br.com.josef.movieaddiktion.repository.FilmeRepository;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
@@ -25,7 +25,7 @@ public class SearchViewModel extends AndroidViewModel {
     private MutableLiveData<Integer> hits;
     private MutableLiveData<Boolean> loading = new MutableLiveData<>();
     private CompositeDisposable disposable = new CompositeDisposable();
-    private SearchRepository repository = new SearchRepository();
+    private FilmeRepository repository = new FilmeRepository();
 
 
     public SearchViewModel(@NonNull Application application) {

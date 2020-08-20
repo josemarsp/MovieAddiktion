@@ -7,7 +7,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import br.com.josef.movieaddiktion.model.data.DatabaseFilme
 import br.com.josef.movieaddiktion.model.pojos.movieid.Filme
-import br.com.josef.movieaddiktion.repository.FilmeIdRepository
+import br.com.josef.movieaddiktion.repository.FilmeRepository
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
@@ -20,7 +20,8 @@ class FavoritoViewModel(application: Application) : AndroidViewModel(application
     private val filmeBoolean = MutableLiveData<Boolean>()
     private val loading = MutableLiveData<Boolean>()
     private val disposable = CompositeDisposable()
-    private val repository = FilmeIdRepository()
+    private val repository =
+        FilmeRepository()
     private val filmeDao =
         DatabaseFilme.getDatabase(getApplication()).filmeDao()
 

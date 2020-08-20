@@ -117,7 +117,7 @@ public class SearchFragment extends Fragment implements OnClickSearch {
     }
 
     @Override
-    public void click(Search search) {
+    public void onClick(Search search) {
         Bundle bundle = new Bundle();
         bundle.putString(MOVIE_ID_KEY, String.valueOf(search.getId()));
         Fragment resultadoFilmeFragment = new ResultadoFilmeFragment();

@@ -8,13 +8,9 @@ public class Utils {
     public static boolean isNetworkConnected(Context context) {
         boolean conectado;
         ConnectivityManager conectivtyManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        if (conectivtyManager.getActiveNetworkInfo() != null &&
+        conectado = (conectivtyManager.getActiveNetworkInfo() != null) &&
                 conectivtyManager.getActiveNetworkInfo().isAvailable() &&
-                conectivtyManager.getActiveNetworkInfo().isConnected()) {
-            conectado = true;
-        } else {
-            conectado = false;
-        }
+                conectivtyManager.getActiveNetworkInfo().isConnected();
         return conectado;
     }
 }

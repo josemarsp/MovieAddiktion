@@ -40,7 +40,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
         holder.onBind(search);
 
         holder.itemView.setOnClickListener(v -> {
-            listener.click(search);
+            listener.onClick(search);
         });
     }
 

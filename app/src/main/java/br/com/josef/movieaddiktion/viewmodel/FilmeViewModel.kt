@@ -9,8 +9,7 @@ import br.com.josef.movieaddiktion.model.data.DatabaseFilmeNowPlaying
 import br.com.josef.movieaddiktion.model.pojos.movieid.Filme
 import br.com.josef.movieaddiktion.model.pojos.nowplaying.FilmeNowPlaying
 import br.com.josef.movieaddiktion.model.pojos.nowplaying.FilmeNowPlayingResult
-import br.com.josef.movieaddiktion.repository.FilmeIdRepository
-import br.com.josef.movieaddiktion.repository.FilmeNowPlayingRepository
+import br.com.josef.movieaddiktion.repository.FilmeRepository
 import br.com.josef.movieaddiktion.util.Utils
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -23,8 +22,10 @@ class FilmeViewModel(application: Application) : AndroidViewModel(application) {
     private val filme = MutableLiveData<Filme>()
     private val loading = MutableLiveData<Boolean>()
     private val disposable = CompositeDisposable()
-    private val repository = FilmeNowPlayingRepository()
-    private val idRepository = FilmeIdRepository()
+    private val repository =
+        FilmeRepository()
+    private val idRepository =
+        FilmeRepository()
     fun getListaFilme(): LiveData<List<FilmeNowPlaying>> {
         return listaFilme
     }
@@ -124,7 +125,7 @@ class FilmeViewModel(application: Application) : AndroidViewModel(application) {
     private val fromLocal: Unit
         private get() {
             disposable.add(
-                repository.getLocalResults(getApplication<Application>().applicationContext)
+                repository.getLocalResultsNowPlaing(getApplication<Application>().applicationContext)
                     .subscribeOn(Schedulers.newThread())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(

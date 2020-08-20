@@ -42,7 +42,7 @@ public class RecyclerViewFilmeAdapter extends RecyclerView.Adapter<RecyclerViewF
         holder.onBind(filmeNowPlaying);
 
         holder.itemView.setOnClickListener(v -> {
-            listener.click(filmeNowPlaying);
+            listener.onClick(filmeNowPlaying);
         });
     }
 

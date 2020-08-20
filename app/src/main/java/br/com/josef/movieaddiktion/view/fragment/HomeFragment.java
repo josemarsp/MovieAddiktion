@@ -90,7 +90,7 @@ public class HomeFragment extends Fragment implements OnClickFilmePlayingNow {
     }
 
     @Override
-    public void click(FilmeNowPlaying filmeNowPlaying) {
+    public void onClick(FilmeNowPlaying filmeNowPlaying) {
 
         Bundle bundle = new Bundle();
         bundle.putString(MOVIE_ID_KEY, String.valueOf(filmeNowPlaying.getId()));
