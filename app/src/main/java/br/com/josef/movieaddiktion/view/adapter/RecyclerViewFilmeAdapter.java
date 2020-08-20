@@ -76,7 +76,9 @@ public class RecyclerViewFilmeAdapter extends RecyclerView.Adapter<RecyclerViewF
         public void onBind(FilmeNowPlaying filmeNowPlaying) {
 
             txtTitulo.setText(filmeNowPlaying.getTitle());
-            Picasso.get().load("https://image.tmdb.org/t/p/w200/" + filmeNowPlaying.getPosterPath()).into(imgFilme);
+            Picasso.get()
+                    .load("https://image.tmdb.org/t/p/w200/" + filmeNowPlaying.getPosterPath())
+                    .into(imgFilme);
         }
     }
 }

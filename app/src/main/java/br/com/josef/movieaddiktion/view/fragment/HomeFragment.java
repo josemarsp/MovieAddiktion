@@ -62,7 +62,7 @@ public class HomeFragment extends Fragment implements OnClickFilmePlayingNow {
         viewModel.getFilmesEmCartaz(API_KEY, LINGUA_PAIS_KEY, pagina);
 
         viewModel.getListaFilme().observe(this, resultadoLista -> adapter.atualizaLista(resultadoLista));
-        
+
         viewModel.getLoading().observe(this, (Boolean loading) -> {
             if (loading) {
                 progressBar.setVisibility(View.VISIBLE);
@@ -95,7 +95,6 @@ public class HomeFragment extends Fragment implements OnClickFilmePlayingNow {
         Bundle bundle = new Bundle();
         bundle.putString(MOVIE_ID_KEY, String.valueOf(filmeNowPlaying.getId()));
         bundle.putString(BANNER_ID_KEY, filmeNowPlaying.getBackdropPath());
-        // bundle.putParcelable(FILME_KEY, filmeNowPlaying);
         Fragment resultadoFilmeFragment = new ResultadoFilmeFragment();
         resultadoFilmeFragment.setArguments(bundle);
         replaceFragment(resultadoFilmeFragment);
